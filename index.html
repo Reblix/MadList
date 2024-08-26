@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mad List</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Adicionando o Favicon -->
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
 </head>
 <body>
     <div class="wishlist-container">
@@ -16,14 +18,15 @@
         <div class="wishlist">
             <input type="text" id="wishlist-name" placeholder="Lista">
             <ul id="wishlist-items">
-                <!-- Os itens serão organizados aqui -->
+                <!-- Items will be dynamically added here -->
             </ul>
         </div>
     </div>
 
-    <!-- Form -->
+    <!-- Form to add a new item -->
     <div class="form-popup" id="itemForm">
-        <h2>Adicionar novo item</h2>
+        <h2 id="formTitle">Adicionar novo item</h2>
+        <input type="hidden" id="editingItemId" value="">
         <label for="itemTitle">Título</label>
         <input type="text" id="itemTitle" placeholder="Digite o título do item" required>
 
@@ -31,12 +34,12 @@
         <textarea id="itemDescription" placeholder="Digite a descrição do item" required></textarea>
 
         <label for="itemImage">Anexar imagem</label>
-        <input type="file" id="itemImage" accept="image/*" required>
+        <input type="file" id="itemImage" accept="image/*">
 
         <label for="itemLink">Link</label>
         <input type="url" id="itemLink" placeholder="Digite a URL">
 
-        <button class="save-btn" onclick="addNewItem()">Salvar</button>
+        <button class="save-btn" onclick="saveItem()">Salvar</button>
         <button class="cancel-btn" onclick="closeForm()">Cancelar</button>
     </div>
 
