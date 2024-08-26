@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wishlist-container">
+        <div class="header">
+            <h1>Lista da Madlene REBLAALIN!</h1>
+            <button class="add-list-btn" onclick="showForm()">+ Adicionar novo item</button>
+        </div>
+        
+        <div class="wishlist">
+            <input type="text" id="wishlist-name" placeholder="Lista">
+            <ul id="wishlist-items">
+                <!-- Os itens serão organizados aqui -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Form -->
+    <div class="form-popup" id="itemForm">
+        <h2>Adicionar novo item</h2>
+        <label for="itemTitle">Título</label>
+        <input type="text" id="itemTitle" placeholder="Digite o título do item" required>
+
+        <label for="itemDescription">Descrição</label>
+        <textarea id="itemDescription" placeholder="Digite a descrição do item" required></textarea>
+
+        <label for="itemImage">Anexar imagem</label>
+        <input type="file" id="itemImage" accept="image/*" required>
+
+        <label for="itemLink">Link</label>
+        <input type="url" id="itemLink" placeholder="Digite a URL">
+
+        <button class="save-btn" onclick="addNewItem()">Salvar</button>
+        <button class="cancel-btn" onclick="closeForm()">Cancelar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

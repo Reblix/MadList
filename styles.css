@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.wishlist-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.add-list-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.wishlist input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#wishlist-items {
+    list-style: none;
+    padding: 0;
+}
+
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.wishlist-item img {
+    max-width: 50px;
+    margin-right: 10px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.item-actions button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.form-popup input[type="text"],
+.form-popup textarea,
+.form-popup input[type="url"],
+.form-popup input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.save-btn, .cancel-btn {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.save-btn {
+    background-color: #333;
+    color: #fff;
+}
+
+.cancel-btn {
+    background-color: #bbb;
+    color: #fff;
+}

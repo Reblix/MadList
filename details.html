@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Item</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="details-container">
+        <button onclick="goBack()">Voltar</button>
+        <div id="item-details">
+            <!-- Item details will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const itemId = params.get('id');
+            if (itemId) {
+                loadItemDetails(itemId);
+            }
+        });
+
+        function loadItemDetails(itemId) {
+            const wishlistItems = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const item = wishlistItems.find(item => item.id === itemId);
+
+            if (item) {
+                const detailsElement = document.getElementById('item-details');
+                detailsElement.innerHTML = `
+                    <h2>${item.title}</h2>
+                    <img src="${item.image}" alt="${item.title}" style="max-width: 100%; height: auto;">
+                    <p>${item.description}</p>
+                    ${item.link ? `<a href="${item.link}" target="_blank">Abrir Link</a>` : ''}
+                `;
+            } else {
+                document.getElementById('item-details').innerText = 'Item não encontrado.';
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
